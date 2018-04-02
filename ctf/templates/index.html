@@ -1,0 +1,101 @@
+{% extends "base.html" %}{% block content %}
+    <section id="main" class="home">
+        <div class="container_12">
+            <div id="content">
+                <div class="grid_12">
+                    <h2 class="product-title">Pigs list</h2>
+                </div><!-- .grid_12 -->
+
+                <div class="clear"></div>
+
+                <div class="products">
+                    {% if pigs %}
+                    {% for pig in pigs %}
+                    <article class="grid_3 article">
+                        <div class="prev">
+                            <img src="{{ pig.pic }}" title="">
+                        </div><!-- .prev -->
+
+                        <h3 class="title"><p style="color: pink"> <strong> {{ pig.name}} </strong> </p> <br/>
+                        <p> {{ pig.cont }}</p>
+                        </h3>
+                        <div >
+                            <div class="cart">
+                            <div class="price">
+                                <div class="vert">
+                                    ${{ 99999 }}.00
+                                </div>
+                            </div>
+                            </div><!-- .cart -->
+                        </div><!-- .discount -->
+
+                    </article><!-- .grid_3.article -->
+                    {% endfor %}
+                    {% else %}
+                        <h5> No pig now ..</h5>
+                    {% endif %}
+
+                    <div class="clear"></div>
+                </div><!-- .products -->
+                <div class="clear"></div>
+            </div><!-- #content -->
+
+            <div class="clear"></div>
+
+            <div id="brands">
+                <div class="c_header">
+                    <div class="grid_10">
+                        <h2>Numbers</h2>
+                    </div><!-- .grid_10 -->
+
+                    <div class="grid_2">
+                        <a id="next_c1" class="next arows" href="#" style="display: block;"><span>Next</span></a>
+                        <a id="prev_c1" class="prev arows" href="#" style="display: block;"><span>Prev</span></a>
+                    </div><!-- .grid_2 -->
+                </div><!-- .c_header -->
+
+                <div class="brands_list">
+                    <div class="caroufredsel_wrapper" style="float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; width: 1008px; height: 102px; margin: 0px; overflow: hidden;"><ul id="listing" style="float: none; position: absolute; top: 0px; left: 0px; margin: 0px; width: 3360px; height: 102px;">
+                        <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand1.png" alt="Brand 1" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand2.png" alt="Brand 2" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand3.png" alt="Brand 3" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand4.png" alt="Brand 4" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand5.png" alt="Brand 5" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand6.png" alt="Brand 6" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                       <li>
+                            <div class="grid_2">
+                                <a href="#"><div><img src="static/brand7.png" alt="Brand 7" title=""></div></a>
+                            </div><!-- .grid_2 -->
+                        </li>
+                    </ul></div><!-- #listing -->
+                </div><!-- .brands_list -->
+            </div><!-- #brands -->
+
+        </div><!-- .container_12 -->
+    </section><!-- #main.home -->
+
+{% endblock %}

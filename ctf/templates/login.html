@@ -1,0 +1,41 @@
+{% extends "base.html" %}{% block content %}
+    <section id="main" class="page-login">
+        <div class="container_12">
+            <div id="content" class="grid_12">
+                <header>
+                    <h1 class="page_title">Login</h1>
+                </header>
+                    
+                <article>
+                    <div class="grid_6 new_customers">
+                        <h2>Hello, Do u like PIG? </h2>
+			<div class="clear"></div>
+                    </div><!-- .grid_6 -->
+		
+                    <div class="grid_6 registed_form">
+			<form class="registed" method="post">
+                <h2> Admin Platform </h2>
+                <p> If you are admin, please login now. </p>
+		<!-- this is timming attack , and password length=10 -->
+			    <div class="text">
+				<strong>Username:</strong><sup>*</sup><br>
+				<input name="username" class="" type="text">
+			    </div><!-- .password -->
+			    <div class="text">
+				    <strong>md5(?)[:4] = {{ vcode }}</strong><sup>*</sup><br>
+				<input name="vcode" class="" type="text">
+			    </div><!-- .email -->
+			    <div class="submit">										
+				<input value="Login" type="submit">
+			    </div><!-- .submit -->
+			</form><!-- .registed -->
+                    </div><!-- .grid_6 -->
+		</article>
+                <div class="clear"></div>
+            </div><!-- #content -->
+
+            <div class="clear"></div>
+        </div><!-- .container_12 -->
+    </section><!-- #main -->
+    <div class="clear"></div>
+{% endblock %}

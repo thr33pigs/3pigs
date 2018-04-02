@@ -1,0 +1,117 @@
+{% extends "base.html" %}{% block content %}
+    <section id="main">
+        <div class="container_12">
+            <div id="content" class="grid_12">
+                <header>
+                    <h1 class="page_title">Manage</h1>
+                </header>
+                You can Describe a pig when you try to make him online (max:200)<br/>
+                <article>
+                    <table class="cart_product">
+                        <tbody><tr class="bg">
+                            <th class="price">status</th>
+                            <th class="images">Image</th>
+                            <th class="edit">Pig Name</th>
+                            <th class="name">Conten</th>
+                            <th class="close">Operation</th>
+                        </tr>
+                        {% for pig in pigs %}
+                        <tr>
+                            <td class="price"> 
+                                {% if pig.status %}
+                                <h5 style="color: pink">    online </h5>
+                                {% else %}
+                                <h5 style="color: black">    offline </h5>
+                                {% endif %}
+                            </td>
+                            <td class="images">
+                                <img src="{{ pig.pic }}" title=""></a>
+                            </td>
+                            <td class="edit"> 
+                                <p>{{pig.name}}</p>
+                            <td class="name">
+                                {% if not pig.status %}
+                                <p><input placeholder="{{ pig.cont}}" name="cont" type="text" style="width:90%" id="content_{{ pigs.index(pig) }}"></p> </td>
+                                {% else %}
+                                <p>{{ pig.cont}}</p>
+                                {% endif %}
+                            </td>
+                            <td class="close">
+                                {% if pig.status %}
+                                <img src="static/free.png" style="width:50%;height:50%;" class="freepig" value="{{ pigs.index(pig)}}"></img>
+                                {% else %}
+                                <img src="static/add.png" style="width:50%;height:50%;" class="addpig" value="{{ pigs.index(pig)}}"></img>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% if flypig %}
+                        <tr>
+                            <td class="price"> 
+                                {% if flypig.status %}
+                                <h5 style="color: pink">    online </h5>
+                                {% else %}
+                                <h5 style="color: black">    offline </h5>
+                                {% endif %}
+                            </td>
+                            <td class="images">
+                                <img src="{{ flypig.pic }}" title=""></a>
+                            </td>
+                            <td class="edit"> 
+                                <p>{{flypig.name}}</p>
+                            <td class="name">
+                                {% if not flypig.status %}
+                                <p><input placeholder="Enter Secret to summon a flying pig" name="cont" type="text" style="width:90%" id="flysecret"></p> </td>
+                                {% elif flypig.status == 1 %}
+                                <p><input placeholder="Let flypig fly higher" name="cont" type="text" style="width:90%" id="flysecret"></p> </td>
+                                {% else %}
+                                <p>Flypig gogogo!</p>
+                                {% endif %}
+                            </td>
+                            <td class="close">
+                                {% if flypig.status < 2 %}
+                                <img src="static/add.png" style="width:50%;height:50%;" id="flypig"></img>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td colspan="7" class="cart_but">
+                                <a href="index.php" class="continue"><img src="static/cont.png" alt="" title=""> Go back</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+
+                        <div class="clear"></div>
+                    </div><!-- #cart_forms -->
+                    <div class="clear"></div>
+                <div class="clear"></div>
+            </div><!-- #content -->
+
+            <div class="clear"></div>
+        </div><!-- .container_12 -->
+    </section><!-- #main -->
+    <div class="clear"></div>
+    <script language="javascript">
+        function p(url, params){
+            $.post(url, params, function(data){
+                alert(data);
+                location.reload();
+            })
+        }
+        $(".freepig").click(function(){
+            var id=$(this).attr("value");
+            p("freepig.php",{'id': id});
+        });
+        $(".addpig").click(function(){
+            var id=$(this).attr("value");
+            var content = $("#content_"+id).attr("value");
+            p("addpig.php",{'id': id, 'content': btoa(content)});
+        });
+        $("#flypig").click(function(){
+            var secret = $("#flysecret").attr("value");
+            p("flypig.php",{'secret': btoa(secret)});
+        });
+    </script>
+{% endblock %}
+

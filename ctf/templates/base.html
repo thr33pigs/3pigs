@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+
+    <title>🐷 🐷 🐷</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="static/grid.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/normalize.css">
+
+    <script src="static/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="static/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="static/html5.js"></script>
+    <script src="static/main.js"></script>
+    <script src="static/radio.js"></script>
+    <script src="static/checkbox.js"></script>
+    <script src="static/selectBox.js"></script>
+    <script src="static/jquery.carouFredSel-5.2.2-packed.js"></script>
+    <script src="static/jquery.jqzoom-core.js"></script>
+    <script src="static/jquery.transit.js"></script>
+    <script src="static/jquery.easing.1.2.js"></script>
+    <script src="static/jquery.anythingslider.js"></script>
+    <script src="static/jquery.anythingslider.fx.js"></script>
+</head>
+<body>
+    <div id="top">
+        <div class="container_12">
+            <div class="grid_3">
+                <div class="lang">
+                    <ul>
+                        <li class=""><a href="#"></a></li>
+                    </ul>
+                </div><!-- .lang -->
+
+                <div class="currency">
+                    <ul>
+                        <li class=""><a href="#"></a></li>
+                    </ul>
+                </div><!-- .currency -->
+            </div><!-- .grid_3 -->
+
+            {% if isadmin %}
+            <div class="grid_9">
+                <nav>
+                    <ul>
+                        <li class="current"><a href="#">{{ session['username'] }}</a></li>
+                        <li ><a href="logout.php">Logout </a></li>
+                    </ul>
+                </nav>
+            </div><!-- .grid_9 -->
+            {% endif %}
+        </div>
+    </div><!-- #top -->
+
+    <header>
+        <div class="container_12">
+            <div class="grid_3">
+                <hgroup>
+                    <h1 id="site_logo"><a href="index.php" title=""><img height="150" src="static/logo.png" alt="Online Store Theme Logo"></a></h1>
+                </hgroup>
+            </div><!-- .grid_3 -->
+
+            <div class="grid_9">
+                <div class="top_header">
+                    <div class="welcome">
+                    <h2 id="site_description">There is a world of 3pigs!</h2>
+                    </div><!-- .welcome -->
+
+                </div><!-- .top_header -->
+
+                <nav class="primary">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        {% if isadmin %}
+                        <li><a href="manage.php">Manage</a></li>
+                        {% endif %}
+                    </ul>
+                </nav><!-- .primary -->
+            </div><!-- .grid_9 -->
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer_navigation">
+            <div class="container_12">
+                <div class="grid_3">
+                     <h3>Contact Us</h3>
+                    <ul class="f_contact">
+                        <li>49 Archdale, 2B Charlestone</li>
+                        <li>+777 (100) 1234</li>
+                        <li>mail@example.com</li>
+                    </ul><!-- .f_contact -->
+                </div><!-- .grid_3 -->
+
+                <div class="grid_3">
+                    <h3>Information</h3>
+                    <nav class="f_menu">
+                        <ul>
+                            <li><a href="#">About As</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Secure payment</a></li>
+                        </ul>
+                    </nav><!-- .private -->
+                </div><!-- .grid_3 -->
+
+                <div class="grid_3">
+                    <h3>Costumer Servise</h3>
+                    <nav class="f_menu">
+                        <ul>
+                            <li><a href="#">Contact As</a></li>
+                            <li><a href="#">Return</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </nav><!-- .private -->
+                </div><!-- .grid_3 -->
+
+                <div class="grid_3">
+                    <h3>My Account</h3>
+                    <nav class="f_menu">
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </nav><!-- .private -->
+                </div><!-- .grid_3 -->
+
+                <div class="clear"></div>
+            </div><!-- .container_12 -->
+        </div><!-- .footer_navigation -->
+
+        <div class="footer_info">
+            <div class="container_12">
+                <div class="grid_6">
+                    <div class="soc">
+                        <a class="google" href="#"></a>
+                        <a class="twitter" href="#"></a>
+                        <a class="facebook" href="#"></a>
+                    </div><!-- .soc -->
+                </div><!-- .grid_6 -->
+
+                <div class="clear"></div>
+            </div><!-- .container_12 -->
+        </div><!-- .footer_info -->
+    </footer>
+</body>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</html>
