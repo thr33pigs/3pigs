@@ -25,7 +25,6 @@ class binary():
                       "No operation",
                       "Wrong secret",
                       "Time Out"]
-        print self.recv()
 
     def send(self, msg):
         self.s.send(msg)
